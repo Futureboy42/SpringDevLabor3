@@ -3,11 +3,27 @@ package hu.bme.aut.jpa.jpa_lab.dao;
 import hu.bme.aut.jpa.jpa_lab.enitity.Employee;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class EmployeeDao extends AbstractDao<Employee> {
 
     public EmployeeDao() {
         super(Employee.class);
+    }
+
+    public List<Employee> findByJobAndSalaryRange(String keyword, int minSalary, int maxSalary) {
+
+        return em.createQuery("""
+            select e
+            from Employee e
+            where lower(e.job) like lower(:keyword)
+            and e.salary between :minSalary and :maxSalary
+            """, Employee.class)
+                .setParameter("keyword", "%" + keyword + "%")
+                .setParameter("minSalary", minSalary)
+                .setParameter("maxSalary", maxSalary)
+                .getResultList();
     }
 
     /*

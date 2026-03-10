@@ -65,9 +65,12 @@ public class JpaLabApplication implements CommandLineRunner {
         List<Company> companies = companyDao.findAll();
 
         Company retrievedCompany = companyDao.findById(company.getId());
-        System.out.println("Employees of company " + retrievedCompany.getName() + ":" +
-                retrievedCompany.getEmployees());
+        System.out.println("Employees of company " + retrievedCompany.getName() + ":" + retrievedCompany.getEmployees());
 
+        List<Employee> result =
+                employeeDao.findByJobAndSalaryRange("advisor", 300000, 500000);
+
+        System.out.println(result);
 
     }
 }
