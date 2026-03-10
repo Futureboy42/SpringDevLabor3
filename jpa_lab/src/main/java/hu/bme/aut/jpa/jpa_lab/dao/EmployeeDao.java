@@ -1,16 +1,16 @@
 package hu.bme.aut.jpa.jpa_lab.dao;
 
 import hu.bme.aut.jpa.jpa_lab.enitity.Employee;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public class EmployeeDao {
+public class EmployeeDao extends AbstractDao<Employee> {
 
+    public EmployeeDao() {
+        super(Employee.class);
+    }
+
+    /*
     @PersistenceContext
     private EntityManager em;
 
@@ -37,4 +37,5 @@ public class EmployeeDao {
     public List<Employee> findAll() {
         return em.createQuery("select e from Employee e", Employee.class).getResultList();
     }
+    */
 }
