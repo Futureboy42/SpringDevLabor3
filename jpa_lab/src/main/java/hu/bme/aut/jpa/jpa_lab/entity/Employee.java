@@ -1,4 +1,4 @@
-package hu.bme.aut.jpa.jpa_lab.enitity;
+package hu.bme.aut.jpa.jpa_lab.entity;
 
 import jakarta.persistence.*;
 
@@ -68,6 +68,9 @@ public class Employee {
 
     public String getName() {
         return name;
+    }
+
+    public Employee() {
     }
 
     public String getJob() {

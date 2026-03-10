@@ -1,6 +1,6 @@
 package hu.bme.aut.jpa.jpa_lab.dao;
 
-import hu.bme.aut.jpa.jpa_lab.enitity.Employee;
+import hu.bme.aut.jpa.jpa_lab.entity.Employee;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

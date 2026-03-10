@@ -2,8 +2,8 @@ package hu.bme.aut.jpa.jpa_lab;
 
 import hu.bme.aut.jpa.jpa_lab.dao.CompanyDao;
 import hu.bme.aut.jpa.jpa_lab.dao.EmployeeDao;
-import hu.bme.aut.jpa.jpa_lab.enitity.Company;
-import hu.bme.aut.jpa.jpa_lab.enitity.Employee;
+import hu.bme.aut.jpa.jpa_lab.entity.Company;
+import hu.bme.aut.jpa.jpa_lab.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -64,7 +64,7 @@ public class JpaLabApplication implements CommandLineRunner {
 
         List<Company> companies = companyDao.findAll();
 
-        Company retrievedCompany = companyDao.findById(company.getId());
+        Company retrievedCompany = companyDao.findByIdWithEmployees(company.getId());
         System.out.println("Employees of company " + retrievedCompany.getName() + ":" + retrievedCompany.getEmployees());
 
         List<Employee> result =

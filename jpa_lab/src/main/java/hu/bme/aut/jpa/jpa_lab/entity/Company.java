@@ -1,4 +1,4 @@
-package hu.bme.aut.jpa.jpa_lab.enitity;
+package hu.bme.aut.jpa.jpa_lab.entity;
 
 import jakarta.persistence.*;
 
@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Company {
 
     @Id

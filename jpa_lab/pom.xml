@@ -49,7 +49,8 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <scope>test</scope>
+            <version>13.2.1.jre11</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
